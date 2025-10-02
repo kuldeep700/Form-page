@@ -4,22 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Employee Information</title>
+    <title>Employee Information Form</title>
+    <meta name="description" content="Submit employee information and details">
 </head>
 <body>
-    <h1 class="Heading">Employee Information Form</h1>
-    <form action="#"  class="img-sec" style="flex-direction: column; align-items: stretch;">
-        <label for="employee-name">Name:</label>
-        <input type="text" id="employee-name" name="employee-name" required>
+    <div class="container">
+        <h1 class="Heading">💼 Employee Information</h1>
+        <form action="#" class="img-sec">
+            <div>
+                <label for="employee-name">Full Name</label>
+                <input type="text" id="employee-name" name="employee-name" placeholder="Enter your full name" required>
+            </div>
 
-        <label for="employee-id">Employee ID:</label>
-        <input type="text" id="employee-id" name="employee-id" required>
+            <div>
+                <label for="employee-id">Employee ID</label>
+                <input type="text" id="employee-id" name="employee-id" placeholder="Enter your employee ID" required>
+            </div>
 
-        <label for="employee-dept">Department:</label>
-        <input type="text" id="employee-dept" name="employee-dept" required>
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your work email" required>
+            </div>
 
-        <button type="submit" class="btn-style" style="margin-top: 20px;">Submit</button>
-        <a href="index.html" class="btn-style" style="text-align: center;">Back to Home</a>
-    </form>
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div>
+                <label for="employee-dept">Department</label>
+                <select id="employee-dept" name="employee-dept" required>
+                    <option value="">Select Department</option>
+                    <option value="hr">Human Resources</option>
+                    <option value="it">Information Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="operations">Operations</option>
+                    <option value="sales">Sales</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="position">Job Position</label>
+                <input type="text" id="position" name="position" placeholder="Enter your job title" required>
+            </div>
+
+            <div>
+                <label for="start-date">Start Date</label>
+                <input type="date" id="start-date" name="start-date" required>
+            </div>
+
+            <button type="submit" class="btn-style">✓ Submit Information</button>
+            <a href="index.html" class="btn-style back-btn">← Back to Home</a>
+        </form>
+    </div>
 </body>
 </html>
