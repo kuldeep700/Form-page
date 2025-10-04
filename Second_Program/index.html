@@ -9,15 +9,46 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="Heading">Entry Form Portal</h1>
-        <div class="img-sec">
-            <img src="1.jpg" alt="Form illustration">
-            <div class="btn">
-                <a href="student_form.html" class="btn-style">📚 Student Details</a>
-                <a href="employee_form.html" class="btn-style">💼 Employee Information</a>
-                <a href="faculty_form.html" class="btn-style">🎓 Faculty Information</a>
+        <header class="hero">
+            <div class="hero-left">
+                <h1 class="Heading">Entry Form Portal</h1>
+                <p class="lead">Fast, accessible forms for students, employees, and faculty — beautifully designed and mobile-friendly.</p>
+                <div class="hero-cta">
+                    <a href="#forms" class="btn-style large">Get Started</a>
+                    <a href="student_form.html" class="btn-style outline">Quick Student Form</a>
+                </div>
             </div>
-        </div>
+            <div class="hero-right">
+                <img src="1.jpg" alt="Form illustration" class="hero-illustration">
+            </div>
+        </header>
+
+        <section id="forms" class="cards">
+            <article class="card" aria-labelledby="card-student">
+                <div class="icon">📚</div>
+                <h3 id="card-student" class="card-title">Student Details</h3>
+                <p class="card-desc">Submit or update student records quickly. Simple validation and responsive layout.</p>
+                <a href="student_form.html" class="btn-style">Open Form</a>
+            </article>
+
+            <article class="card" aria-labelledby="card-employee">
+                <div class="icon">💼</div>
+                <h3 id="card-employee" class="card-title">Employee Information</h3>
+                <p class="card-desc">Add employee profiles, start dates and department assignments with ease.</p>
+                <a href="employee_form.html" class="btn-style">Open Form</a>
+            </article>
+
+            <article class="card" aria-labelledby="card-faculty">
+                <div class="icon">🎓</div>
+                <h3 id="card-faculty" class="card-title">Faculty Information</h3>
+                <p class="card-desc">Collect teaching subject, qualifications and experience in a clean interface.</p>
+                <a href="faculty_form.html" class="btn-style">Open Form</a>
+            </article>
+        </section>
+
+        <footer class="site-footer">
+            <p>Made with care • Responsive • Accessible</p>
+        </footer>
     </div>
 </body>
 </html>
