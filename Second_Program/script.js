@@ -13,6 +13,8 @@
     clearTimeout(t._hide);
     t._hide = setTimeout(function(){ t.classList.remove('show'); }, 2500);
   }
+// to toogle b/t dark and light 
+  document.documentElement.setAttribute('data-theme', 'dark');
 
   function handleForm(e){
     e.preventDefault();
