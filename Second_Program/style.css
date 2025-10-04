@@ -9,6 +9,7 @@
   --muted: #6b7280;
   --glass: rgba(255, 255, 255, 0.85);
   --radius: 16px;
+  --card-text: #0b1220;
 }
 
 /* Dark Mode */
@@ -16,6 +17,7 @@
   --card: #1e293b;
   --muted: #94a3b8;
   --glass: rgba(255, 255, 255, 0.08);
+  --card-text: #f8fafc;
 }
 
 [data-theme='dark'] body {
@@ -56,7 +58,7 @@ body {
 /* HERO */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr minmax(280px, 1fr);
   gap: 28px;
   align-items: center;
 }
@@ -119,8 +121,8 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.35);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 35px 70px rgba(2,6,23,0.4);
 }
 
 /* Gradient Border for Card */
@@ -148,8 +150,19 @@ body {
 .card-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0b1220;
+  color: var(--card-text);
   margin-top: 6px;
+}
+.card-title::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  transition: width 0.3s ease;
+}
+.card:hover .card-title::after {
+  width: 50px;
 }
 
 .card-desc {
@@ -176,13 +189,19 @@ body {
   color: #fff;
   box-shadow: 0 8px 22px rgba(124, 92, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: transform 0.18s, box-shadow 0.18s;
+  transition: transform 0.18s, box-shadow 0.18s, background-position 0.3s;
+  background-size: 200% 200%;
 }
 
 .btn-style:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(124, 92, 255, 0.18);
+  background-position: right center;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent-1), 0 0 30px var(--accent-2);
 }
+.btn-style:hover svg {
+  transform: translateX(4px);
+}
+
 
 .btn-style.outline {
   background: transparent;
@@ -313,7 +332,8 @@ form img {
     grid-template-columns: repeat(2, 1fr);
   }
   .hero-illustration {
-    order: -1;
+    max-width: 100%; height: auto;
+    animation: float 6s ease-in-out infinite;
   }
 }
 
@@ -327,4 +347,8 @@ form img {
   .container {
     margin: 18px auto;
   }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
